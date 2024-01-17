@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Celebremos Juntos!</title>
+    <audio controls loop autoplay muted>
+        <source src="videoplayback.m4a" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <style>
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(1deg) translateY(0); }
+            100% { transform: rotate(0deg) translateY(10px); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .invitation {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Agregar opacidad al fondo blanco */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            animation: swing 3s infinite;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation">
+        <h1>¡Celebremos Juntos!</h1>
+        <img src="FAMI.jpeg" alt="Imagen de la fiesta">
+        <p>¡Hola <span id="nombreMostrado"></span>!</p>
+        <p>¡Es tiempo de alegría y celebración! Estás cordialmente invitado 
+            a la fiesta de cumpleaños de <span id="cumpleaneroMostrado">Mi querida Madre:MARTA PILLCO QUISPE</span>. Será un día lleno de risas, buenos momentos y sorpresas.</p>
+
+        <p><strong>Fecha:</strong> 18 de enero, 2024</p>
+        <p><strong>Hora:</strong> 15:00 hrs</p>
+        <p><strong>Lugar:</strong> ESQ.PANANTUCO</p>
+
+        <p>Un día especial merece una compañía especial, y no será lo mismo sin ti. Así que únete a nosotros para compartir alegría y crear recuerdos.
+            <p>Los esperamos familia: <span id="familiaMostrada"></span></p> </p>
+
+        <div class="footer">
+            <p>¡Esperamos verte ahí!</p>
+        </div>
+    </div>
+
+  
+    <script>
+        // Recuperar nombre y familia de localStorage
+        const nombre = localStorage.getItem('nombre');
+        const familia = localStorage.getItem('familia');
+
+        // Mostrar nombre y familia en la página
+        document.getElementById('nombreMostrado').innerText = nombre;
+        document.getElementById('familiaMostrada').innerText = familia;
+    </script>
+
+</body>
+</html>
